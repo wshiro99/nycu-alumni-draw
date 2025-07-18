@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陽明交大資訊系友日 - 分組抽籤</title>
+<style>
+    body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+        background: #f7f9fc;
+    }
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    #result {
+        font-size: 2.8rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin: 1.5rem 0;
+    }
+    button {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+        background: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #2980b9;
+    }
+    .note {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+    <h1>分組抽籤 / Group Draw</h1>
+    <div id="result">？</div>
+    <button onclick="draw()">抽籤 / Draw</button>
+    <div class="note">請把結果寫在姓名貼上</div>
+
+<script>
+function draw() {
+    const groupNames = ["交", "大", "資", "訊"]; // 資訊系特色命名
+    const g = Math.floor(Math.random() * 4) + 1;
+    document.getElementById('result').innerHTML = `第 ${g} 組<br>(${groupNames[g-1]})`;
+}
+</script>
+</body>
+</html>
